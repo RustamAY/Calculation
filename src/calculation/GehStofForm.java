@@ -2,12 +2,14 @@ package calculation;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class GehStofForm extends JFrame {
 
     public GehStofForm(){
         super("Gehandhabte Stofe");
-        super.setBounds(500, 500, 500,450);
+        super.setBounds(520, 520, 500,450);
         super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         Container container = super.getContentPane();
@@ -27,11 +29,40 @@ public class GehStofForm extends JFrame {
         JLabel verwendung = new JLabel("Verwendung:");
         JComboBox verComboBox = new JComboBox(items);
         JLabel heizwer = new JLabel("Heizwert Hu (kJ/kg):");
+        JTextField heiz = new JTextField("",1);
         JLabel mass = new JLabel("Massenstorm");
+        JTextField massen = new JTextField("",1);
         JLabel gesch = new JLabel("Betriebs-/Geschäftsgeheimnisse:");
-        JCheckBox betribs = new JCheckBox("",false);
+        JLabel grundFur = new JLabel("Grund für Geheimhaltung");
         JTextArea grung = new JTextArea();
+        JCheckBox betribs = new JCheckBox("",false);
+        JButton back = new JButton("Back");
         JButton save = new JButton("Save");
+
+        container.add(bezeichnung);
+        container.add(bez_field);
+        container.add(verwendung);
+        container.add(verComboBox);
+        container.add(heizwer);
+        container.add(heiz);
+        container.add(mass);
+        container.add(massen);
+        container.add(gesch);
+        container.add(betribs);
+        container.add(grundFur);
+        container.add(grung);
+        container.add(back);
+        container.add(save);
+
+        back.addActionListener(new ButtonEventManager());
+    }
+
+    static class ButtonEventManager implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+
+        }
     }
 
 }

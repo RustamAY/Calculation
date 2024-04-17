@@ -2,6 +2,8 @@ package calculation;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Form extends JFrame {
 
@@ -23,7 +25,20 @@ public class Form extends JFrame {
         container.add(gehTierhaltung);
         container.add(emission);
 
+        gehStofe.addActionListener(new ButtonEventManager());
 
     }
 
+    static class ButtonEventManager implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            GehStofForm gehStofForm = new GehStofForm();
+            gehStofForm.setVisible(true);
+        }
+
+
+
+
+    }
 }
