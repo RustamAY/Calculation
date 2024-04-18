@@ -26,6 +26,7 @@ public class Form extends JFrame {
         container.add(emission);
 
         gehStofe.addActionListener(new ButtonEventManager());
+        gehBrenstofe.addActionListener(new ButtonEventManager());
 
     }
 

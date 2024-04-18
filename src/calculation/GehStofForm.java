@@ -10,7 +10,7 @@ public class GehStofForm extends JFrame {
     public GehStofForm(){
         super("Gehandhabte Stofe");
         super.setBounds(520, 520, 500,450);
-        super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        super.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         Container container = super.getContentPane();
         container.setLayout(new GridLayout(7, 1, 2, 2));
