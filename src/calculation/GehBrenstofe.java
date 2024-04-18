@@ -86,7 +86,7 @@ public class GehBrenstofe extends JFrame {
 
     }
 
-    static class GoBackButton implements ActionListener{
+    protected class GoBackButton implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent e) {

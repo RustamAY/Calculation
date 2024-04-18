@@ -8,11 +8,11 @@ public class Tierhaltung extends JFrame {
     public Tierhaltung(){
 
         super("Tierhaltung");
-        super.setBounds(500,500,500,450);
+        super.setBounds(500,500,500,600);
         super.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         Container container = super.getContentPane();
-        container.setLayout(new GridLayout(5,2,2,10));
+        container.setLayout(new GridLayout(10,1,2,2));
 
         String[] items = {
                 "00097051 - Legehennen",

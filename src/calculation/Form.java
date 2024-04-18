@@ -27,6 +27,7 @@ public class Form extends JFrame {
 
         gehStofe.addActionListener(new OpenGSForm());
         gehBrenstofe.addActionListener(new OpenGehBrens());
+        gehTierhaltung.addActionListener(new OpenTierhaltung());
 
     }
 
@@ -46,4 +47,15 @@ public class Form extends JFrame {
             gehBrenstofe.setVisible(true);
         }
     }
+
+    static class OpenTierhaltung implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            Tierhaltung tierhaltung = new Tierhaltung();
+            tierhaltung.setVisible(true);
+        }
+    }
+
+
 }
