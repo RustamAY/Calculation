@@ -25,21 +25,25 @@ public class Form extends JFrame {
         container.add(gehTierhaltung);
         container.add(emission);
 
-        gehStofe.addActionListener(new ButtonEventManager());
-        gehBrenstofe.addActionListener(new ButtonEventManager());
+        gehStofe.addActionListener(new OpenGSForm());
+        gehBrenstofe.addActionListener(new OpenGehBrens());
 
     }
 
-    static class ButtonEventManager implements ActionListener{
+    static class OpenGSForm implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent e) {
             GehStofForm gehStofForm = new GehStofForm();
             gehStofForm.setVisible(true);
         }
+    }
 
-
-
-
+    static class OpenGehBrens implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            GehBrenstofe gehBrenstofe = new GehBrenstofe();
+            gehBrenstofe.setVisible(true);
+        }
     }
 }

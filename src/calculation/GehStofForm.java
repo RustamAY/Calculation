@@ -7,6 +7,8 @@ import java.awt.event.ActionListener;
 
 public class GehStofForm extends JFrame {
 
+    JTextField massen;
+
     public GehStofForm(){
         super("Gehandhabte Stofe");
         super.setBounds(520, 520, 500,450);
@@ -31,7 +33,7 @@ public class GehStofForm extends JFrame {
         JLabel heizwer = new JLabel("Heizwert Hu (kJ/kg):");
         JTextField heiz = new JTextField("",1);
         JLabel mass = new JLabel("Massenstorm");
-        JTextField massen = new JTextField("",1);
+        massen = new JTextField("",1);
         JLabel gesch = new JLabel("Betriebs-/Geschäftsgeheimnisse:");
         JLabel grundFur = new JLabel("Grund für Geheimhaltung");
         JTextArea grung = new JTextArea();
@@ -53,6 +55,8 @@ public class GehStofForm extends JFrame {
         container.add(grung);
         container.add(back);
         container.add(save);
+
+//        Integer massValue = Integer.valueOf(massen.getText());
 
         back.addActionListener(new ButtonEventManager());
     }
