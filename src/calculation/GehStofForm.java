@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
 
 public class GehStofForm extends JFrame {
 
@@ -25,6 +26,15 @@ public class GehStofForm extends JFrame {
                 "04 - Nebenprodukt",
                 "05 - Brennstoff"
         };
+
+//        HashMap<Integer, String> items = new HashMap<>();
+//        items.put(00, "- Einsatz = Endprodukt (Lagerstoff)");
+//        items.put(01, " - Einsatz");
+//        items.put(02, " - Zuschlag");
+//        items.put(03, " - Endprodukt");
+//        items.put(04, " - Nebenprodukt");
+//        items.put(05, " - Brennstoff");
+
 
         JLabel bezeichnung = new JLabel("Bezeichnung:");
         JTextField  bez_field = new JTextField("", 1);
