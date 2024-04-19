@@ -101,6 +101,14 @@ public class GehStofForm extends JFrame {
                         + vervendung + "\nHeizwert Hu(Kj/kg): " + heizwertVal + "\nMassenstrom: " + masVal +
                         "\nGrund fur Gehelmhaltung: " + "\n" + grungText);
             }
+
+//            public class DataHolder {
+//                public static String bezText;
+//                public static int heizwertVal;
+//                public static int masVal;
+//                public static String grungText;
+//                public static Object vervendung;
+//            }
         });
     }
 }
