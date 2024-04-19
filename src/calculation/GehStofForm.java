@@ -68,15 +68,21 @@ public class GehStofForm extends JFrame {
 
 //        Integer massValue = Integer.valueOf(massen.getText());
 
-        back.addActionListener(new ButtonEventManager());
+        back.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+
+            }
+        });
     }
 
-    static class ButtonEventManager implements ActionListener{
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-
-        }
-    }
+//    static class ButtonEventManager implements ActionListener{
+//
+//        @Override
+//        public void actionPerformed(ActionEvent e) {
+//
+//        }
+//    }
 
 }
