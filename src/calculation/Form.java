@@ -28,52 +28,11 @@ public class Form extends JFrame {
         gehStofe.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                GehStofForm gehStofForm = new GehStofForm();
+                GehStofForm gehStofForm = new GehStofForm(Form.this);
                 gehStofForm.setVisible(true);
                 setVisible(false);
             }
         });
-        gehBrenstofe.addActionListener(new OpenGehBrens());
-        gehTierhaltung.addActionListener(new OpenTierhaltung());
-
     }
-
-    //static class OpenGSForm implements ActionListener() {
-
-//        @Override
-//        public void actionPerformed (ActionEvent e) {
-//            GehStofForm gehStofForm = new GehStofForm();
-//            gehStofForm.setVisible(true);
-//            setVisible(false);
-//        }
-    //}
-
-    static class OpenGehBrens implements ActionListener{
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            GehBrenstofe gehBrenstofe = new GehBrenstofe();
-            gehBrenstofe.setVisible(true);
-        }
-    }
-
-    static class OpenTierhaltung implements ActionListener{
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            Tierhaltung tierhaltung = new Tierhaltung();
-            tierhaltung.setVisible(true);
-        }
-    }
-
-//    public static void form(String[] args) {
-//        SwingUtilities.invokeLater(new Runnable() {
-//            @Override
-//            public void run() {
-//                Form form = new Form();
-//                form.setVisible(true);
-//            }
-//        });
-//    }
-
 }
 

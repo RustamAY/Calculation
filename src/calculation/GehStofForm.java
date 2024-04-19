@@ -7,11 +7,14 @@ import java.awt.event.ActionListener;
 import java.util.HashMap;
 
 public class GehStofForm extends JFrame {
+    private JFrame form;
 
     JTextField massen;
 
-    public GehStofForm(){
-        super("Gehandhabte Stofe");
+    public GehStofForm(JFrame form){
+        this.form = form;
+
+        setTitle("Gehandhabte Stofe");
         super.setBounds(520, 520, 500,450);
         super.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
@@ -66,23 +69,12 @@ public class GehStofForm extends JFrame {
         container.add(back);
         container.add(save);
 
-//        Integer massValue = Integer.valueOf(massen.getText());
-
         back.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
-
+                form.setVisible(true);
             }
         });
     }
-
-//    static class ButtonEventManager implements ActionListener{
-//
-//        @Override
-//        public void actionPerformed(ActionEvent e) {
-//
-//        }
-//    }
-
 }
