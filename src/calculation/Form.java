@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.text.Normalizer;
 
 public class Form extends JFrame {
 
@@ -19,11 +21,20 @@ public class Form extends JFrame {
         JButton gehBrenstofe = new JButton("Gehandhabte Brennstofe");
         JButton gehTierhaltung = new JButton("Tierhaltung");
         JButton emission = new JButton("Emissionen");
+        JButton close = new JButton("CLOSE");
 
         container.add(gehStofe);
         container.add(gehBrenstofe);
         container.add(gehTierhaltung);
         container.add(emission);
+        container.add(close);
+
+        close.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+            }
+        });
 
         gehStofe.addActionListener(new ActionListener() {
             @Override

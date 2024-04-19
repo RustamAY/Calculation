@@ -1,5 +1,6 @@
 package calculation;
 
+import javax.naming.ldap.SortResponseControl;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,7 +10,10 @@ import java.util.HashMap;
 public class GehStofForm extends JFrame {
     private JFrame form;
 
-    JTextField massen;
+    JTextField bezValue, heiz, massen;
+    JTextArea grung;
+    JCheckBox betribs;
+    JComboBox verComboBox;
 
     public GehStofForm(JFrame form){
         this.form = form;
@@ -30,32 +34,24 @@ public class GehStofForm extends JFrame {
                 "05 - Brennstoff"
         };
 
-//        HashMap<Integer, String> items = new HashMap<>();
-//        items.put(00, "- Einsatz = Endprodukt (Lagerstoff)");
-//        items.put(01, " - Einsatz");
-//        items.put(02, " - Zuschlag");
-//        items.put(03, " - Endprodukt");
-//        items.put(04, " - Nebenprodukt");
-//        items.put(05, " - Brennstoff");
-
-
         JLabel bezeichnung = new JLabel("Bezeichnung:");
-        JTextField  bez_field = new JTextField("", 1);
+        bezValue = new JTextField("", 1);
         JLabel verwendung = new JLabel("Verwendung:");
-        JComboBox verComboBox = new JComboBox(items);
+        verComboBox = new JComboBox(items);
         JLabel heizwer = new JLabel("Heizwert Hu (kJ/kg):");
-        JTextField heiz = new JTextField("",1);
+        heiz = new JTextField("",1);
         JLabel mass = new JLabel("Massenstorm");
         massen = new JTextField("",1);
         JLabel gesch = new JLabel("Betriebs-/Geschäftsgeheimnisse:");
         JLabel grundFur = new JLabel("Grund für Geheimhaltung");
-        JTextArea grung = new JTextArea();
-        JCheckBox betribs = new JCheckBox("",false);
+        grung = new JTextArea();
+        grung.setEnabled(false);
+        betribs = new JCheckBox("",false);
         JButton back = new JButton("Back");
         JButton save = new JButton("Save");
 
         container.add(bezeichnung);
-        container.add(bez_field);
+        container.add(bezValue);
         container.add(verwendung);
         container.add(verComboBox);
         container.add(heizwer);
@@ -74,6 +70,36 @@ public class GehStofForm extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
                 form.setVisible(true);
+            }
+        });
+
+        betribs.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (betribs.isSelected()){
+                    grung.setEnabled(true);
+                }
+                else {
+                    grung.setEnabled(false);
+                    grung.setText("");
+                }
+            }
+        });
+
+        save.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String bezText = bezValue.getText();
+                String heizVal = heiz.getText();
+                Integer heizwertVal = Integer.parseInt(heizVal);
+                String massVal = massen.getText();
+                Integer masVal = Integer.parseInt(massVal);
+                String grungText = grung.getText();
+                Object vervendung = verComboBox.getSelectedItem();
+
+                JOptionPane.showMessageDialog(null, "Bezeichnung: " + bezText + "\nVervendung: "
+                        + vervendung + "\nHeizwert Hu(Kj/kg): " + heizwertVal + "\nMassenstrom: " + masVal +
+                        "\nGrund fur Gehelmhaltung: " + "\n" + grungText);
             }
         });
     }
